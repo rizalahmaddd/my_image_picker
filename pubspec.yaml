@@ -2,7 +2,7 @@ name: my_image_picker
 description: A Flutter package to pick images with custom design
 version: 0.0.1
 homepage: "https://github.com/rizalahmaddd/my_image_picker"
-
+publish_to: none  # 
 environment:
   sdk: ^3.5.3
   flutter: ">=1.17.0"

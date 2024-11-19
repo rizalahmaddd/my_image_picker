@@ -14,6 +14,7 @@ class MyImagePicker extends FormField<List<XFile>> {
     this.min,
     this.max,
     required this.onChanged,
+    this.height = 120,
     this.gridCount = 4,
     this.spacing = 8,
     this.runSpacing = 8,
@@ -39,6 +40,7 @@ class MyImagePicker extends FormField<List<XFile>> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MyImagePickerContent(
+                  height: height,
                   title: title,
                   hint: hint,
                   images: state.value ?? [],
@@ -68,6 +70,7 @@ class MyImagePicker extends FormField<List<XFile>> {
 
   final int? min;
   final int? max;
+  final double height;
   final int gridCount;
   final ValueChanged<List<XFile>> onChanged;
   final double spacing;

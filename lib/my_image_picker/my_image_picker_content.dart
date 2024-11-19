@@ -20,9 +20,11 @@ class MyImagePickerContent extends StatefulWidget {
     required this.source,
     this.title,
     this.hint,
+    this.height,
   });
 
   final List<XFile> images;
+  final double? height;
   final int? min;
   final int? max;
   final int gridCount;
@@ -62,7 +64,7 @@ class MyImagePickerContentState extends State<MyImagePickerContent> {
             ),
             if (widget.max == null || images.length < widget.max!)
               SizedBox(
-                height: 120,
+                height: widget.height,
                 width: images.isEmpty ? constraints.maxWidth : width,
                 child: ImageButton(
                   onTap: () => _pickImage(context),
@@ -79,7 +81,7 @@ class MyImagePickerContentState extends State<MyImagePickerContent> {
   Widget _buildImageItem(XFile image, double width) {
     return SizedBox(
       width: width,
-      height: 120,
+      height: widget.height,
       child: Stack(
         children: [
           Positioned.fill(
